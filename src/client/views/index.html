@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Travel App</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="headline"><h3>Travel Planner</h3></div>
+    <section>
+      <h3>My Trips</h3>
+      <div>
+        <button id="btn-add-trip">Add Trip</button>
+      </div>
+      <div id="add-trip-form">
+        <div class="trip-summary">
+          <label for="city"> My trip to:</label>
+          <input type="text" id="city" placeholder=" Enter City">
+        </div>
+
+        <div class="trip-departing">
+          <label for="date">Departing:</label>
+          <input type="text" id="date" placeholder=" MM/DD/YY">
+        </div>
+
+        <div class="button-panel">
+          <button id="btn-add" type="submit">Save Trip</button>
+          <button id="btn-delete" type="submit">Remove Trip</button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="trip-item">
+        <div id="city-image"></div>
+        <caption id="city-image-name"></caption>
+      </div>
+
+
+      <div class="trip-item">
+        
+
+        <div class="trip-info">
+          <div>
+            My trip to:
+          </div>
+          <div class="title">Trip Info</div>
+          <div class="destination">
+            <div id="ourLocation"></div>
+            <div id="country"></div>
+            <div id="days"></div>
+          </div>
+          <div class="title">Typical weather for then is</div>
+          <div id="entryWeather">
+            <div id="temperature"></div>
+            <div id="prognosisHigh"></div>
+            <div id="prognosisLow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="box">
+        <div class="box-item">
+          <i>Design by Lee.</i>
+        </div>
+        <div class="box-item">
+          &copy;2015-2019
+        </div>
+        <div class="box-item">
+          Udacity
+        </div>
+
+      </div>
+
+    </footer>
+  </div>
+  <script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
+</body>
+
+</html>
