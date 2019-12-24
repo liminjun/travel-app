@@ -8,7 +8,7 @@ const darkSkyURL = 'https://api.darksky.net/forecast/';
 const pixabayKEY = process.env.pixabayKEY;
 const pixabayURL = 'https://pixabay.com/api/?';
 
-const geonamesURL = 'http://api.geonames.org/citiesJSON?';
+
 
 
 
@@ -47,11 +47,11 @@ const data = {};
 app.post('/add', function (req, res) {
     const requestBody = req.body;
     data.location = requestBody.location;
-    data.country = requestBody.country;
+    data.countryName = requestBody.countryName;
     data.latitude = requestBody.latitude;
     data.longitude = requestBody.longitude;
     data.duration = requestBody.duration;
-    data.weather = requestBody.weather;
+  
 
     travelData.push(data);
     res.end();
