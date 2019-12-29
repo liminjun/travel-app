@@ -7,29 +7,32 @@
 </head>
 
 <body>
+ 
   <div class="container">
-    <div class="headline"><h3>Travel Planner</h3></div>
+    <div class="headline">
+      <h1>Travel Planner</h1>
+    </div>
+
     <section>
       <h3>My Trips</h3>
       <div>
-        <button id="btn-add-trip">Add Trip</button>
+        <button id="btn-init">List Trip</button>
       </div>
-      <div id="add-trip-form">
-        <div class="trip-summary">
+      <form id="add-trip-form">
+        <div class="trip-summary row">
           <label for="city"> My trip to:</label>
-          <input type="text" id="city" placeholder=" Enter City">
+          <input type="text" id="city" required placeholder=" Enter Location">
         </div>
 
-        <div class="trip-departing">
+        <div class="trip-departing row">
           <label for="date">Departing:</label>
-          <input type="text" id="date" placeholder=" MM/DD/YY">
+          <input type="date" id="date" required placeholder=" yyyy/mm/dd">
         </div>
 
-        <div class="button-panel">
-          <button id="btn-add" type="submit">Save Trip</button>
-          <button id="btn-delete" type="submit">Remove Trip</button>
+        <div class="button-panel row">
+          <input type="submit" id="btn-add" value="Save Trip" />
         </div>
-      </div>
+      </form>
     </section>
     <section>
       <div class="trip-item">
@@ -39,24 +42,20 @@
 
 
       <div class="trip-item">
-        
+
 
         <div class="trip-info">
           <div>
             My trip to:
           </div>
           <div class="title">Trip Info</div>
-          <div class="destination">
-            <div id="ourLocation"></div>
-            <div id="country"></div>
-            <div id="days"></div>
+          <div id="result-container">
+            
+
+
           </div>
-          <div class="title">Typical weather for then is</div>
-          <div id="entryWeather">
-            <div id="temperature"></div>
-            <div id="prognosisHigh"></div>
-            <div id="prognosisLow"></div>
-          </div>
+
+
         </div>
       </div>
     </section>
@@ -87,6 +86,8 @@
       });
     }
   </script>
+ 
+
 </body>
 
 </html>

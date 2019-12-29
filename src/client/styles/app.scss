@@ -1,5 +1,40 @@
 .container {
     width: 80%;
     margin: 0 auto;
-    background-color: green;
+}
+.destination{
+    display: flex;
+    background-color: #ffedee;
+}
+.left-side{
+    flex: 1;
+    padding: 5px;
+    text-align: center;
+    img{
+        border-radius: 5px;
+        
+    }
+}
+.right-side{
+    flex: 1;
+    
+}
+#add-trip-form{
+    background-color: #e5e3e3;
+    padding: 20px 0;
+    .row{
+        width: 50%;
+        margin: 20px auto;
+    }
+    label{
+        text-align: left;
+        width: 200px;
+        display: inline-block;
+    }
+    input{
+        height: 24px;
+        line-height: 24px;
+        border: 1px solid #000;
+        border-radius: 1px;
+    }
 }
