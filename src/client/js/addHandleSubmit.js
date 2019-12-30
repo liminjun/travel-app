@@ -38,16 +38,7 @@ const allData = [
         "imageUrl": "https://pixabay.com/get/54e4d64a4d50a514f6da8c7dda79367a1538d7e452506c4870287cd1954ccc5bb1_640.jpg"
     }
 ];
-function addHandleSubmit1(event) {
-    const resultContainer = document.getElementById('result-container');
-    let resultTemplate = '';
-    for (let i = 0; i < allData.length; i++) {
 
-
-        resultTemplate += template;
-    }
-    resultContainer.innerHTML = resultTemplate;
-}
 
 function getList() {
     getTravelList(apiURL + '/list')
@@ -66,9 +57,9 @@ function addHandleSubmit(event) {
         return;
     }
 
-    let currentDate = new Date();
-
-    let duration = (new Date(goDate).setHours(0, 0, 0) - currentDate.setHours(0, 0, 0)) / (1000 * 3600 * 24);
+ 
+    let duration = new Date(goDate).getDay()-(new Date()).getDay();
+ 
 
     getData(geonamesURL, city, userName)
         .then((data) => {

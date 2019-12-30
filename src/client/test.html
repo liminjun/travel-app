@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="date">Departing:</label>
+    <input type="date" id="date" required placeholder=" yyyy/mm/dd">
+    <input type="button" onclick="cal()" value="计算">
+    <script>
+        function cal() {
+            var goDate = document.getElementById('date').value;
+            var currentDate = new Date();
+            var during = (new Date(goDate).setHours(0, 0, 0) - currentDate.setHours(0, 0, 0)) / (1000 * 3600 * 24);
+            console.log(during);
+        }
+
+    </script>
+</body>
+
+</html>

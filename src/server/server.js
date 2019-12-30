@@ -48,29 +48,30 @@ app.get('/list', function (req, res) {
 app.post('/add', function (req, res) {
     const requestBody = req.body;
     let data = {};
-    console.log(requestBody);
+
     data.location = requestBody.location;
     data.countryName = requestBody.countryName;
     data.latitude = requestBody.latitude;
     data.longitude = requestBody.longitude;
+    data.goDate = requestBody.goDate;
     data.duration = requestBody.duration;
 
     const weatherPromise = new Promise((resolve, reject) => {
         darksky(data.latitude, data.longitude).then(function (response) {
-            console.log(response);
+         
             resolve(response);
         });
     });
     const imagePromise = new Promise((resolve, reject) => {
         pixabay(data.location).then(function (response) {
-            console.log(response);
+   
             resolve(response);
         });
     });
 
     Promise.all([weatherPromise, imagePromise]).then(function (results) {
 
-        console.log(results);
+    
         const weatherData = results[0];
         const imageData = results[1];
         data.dailySummary = weatherData.daily.data[0].summary;
@@ -78,12 +79,12 @@ app.post('/add', function (req, res) {
 
         data.temperatureMax = weatherData.daily.data[0].temperatureMax;
 
-        if(imageData.totalHits>0){
-            data.imageUrl=imageData.hits[0].webformatURL;
-        }else{
-            data.imageUrl='';
+        if (imageData.totalHits > 0) {
+            data.imageUrl = imageData.hits[0].webformatURL;
+        } else {
+            data.imageUrl = '';
         }
-        
+
 
         travelData.push(data);
 
@@ -132,7 +133,7 @@ const pixabay = async (location) => {
     const response = await fetch(requestURL);
     let result = {};
     try {
-   
+
         result = await response.json();
 
     } catch (error) {
