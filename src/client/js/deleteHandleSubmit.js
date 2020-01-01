@@ -9,6 +9,7 @@ function deleteHandleSubmit(event) {
         
         console.log(response);
         if(response.success){
+            alert("Remove trip successfully.");
             Client.addHandleSubmit.getList();
         }
     });

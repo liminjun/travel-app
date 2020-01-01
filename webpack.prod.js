@@ -18,21 +18,31 @@ module.exports = {
     mode: "production",
     entry: "./src/client/index.js",
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        libraryTarget: 'var',
+        library: 'Client'
     },
     module: {
         rules: [
             {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader'
+                }
+            },
+            {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
-            }, {
-                test: "/\.scss$/",
-                use: ["style-loader", "css-loader", "sass-loader"]
-            }, {
-                test: /\.(jpg|jpeg|png|gif|svg)$/i,
-                loader: "file-loader"
+            },
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader',
+                ],
             }
         ]
     },

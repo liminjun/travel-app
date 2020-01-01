@@ -102,7 +102,7 @@ app.post('/add', function (req, res) {
 
 // Delete travle data
 app.post('/delete', function (req, res) {
-    let currentIndex = req.currentIndex;
+    let currentIndex = req.body.currentIndex;
 
     travelData.splice(currentIndex, 1);
     res.send({

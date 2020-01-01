@@ -1,0 +1,24 @@
+@media screen and (min-width:100px) and (max-width:600px) {
+    .container {
+        width: 100%;
+    }
+
+    .destination {
+        display: block;
+    }
+
+    .left-side,
+    .right-side {
+        width: 100%;
+    }
+
+    .right-side {
+        padding: 0 10%;
+    }
+    .author{
+        flex: 1;
+    }
+    .other{
+        flex: 0.75;
+    }
+}

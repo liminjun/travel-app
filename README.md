@@ -1,10 +1,30 @@
-# Weather-Journal App Project
+# Travel App Project
 
 ## Overview
 This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
-## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+## Run the application
+1. **Pre-requisite** : 
+Install [node.js](https://nodejs.org/)
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+2. unzip the projects folder.
+
+3. install the dependencies
+```
+npm install
+```
+4. Run build for the project using the cmd as follow:
+```
+npm run build-prod
+```
+
+5. Run the server.
+```
+npm start
+```
+
+6. View the URL **http://localhost:8080/** in browser.
+7. Run the testing.
+```
+npm run test.
+```

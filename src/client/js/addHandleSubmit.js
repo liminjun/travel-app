@@ -57,9 +57,10 @@ function addHandleSubmit(event) {
         return;
     }
 
- 
-    let duration = new Date(goDate).getDay()-(new Date()).getDay();
- 
+
+    let timesDiff = Math.abs((new Date(goDate)).getTime() - (new Date()).getTime);
+    let diffDays = Math.ceil(timesDiff / (1000 * 60 * 60 * 24));//向上取整
+
 
     getData(geonamesURL, city, userName)
         .then((data) => {
@@ -70,7 +71,7 @@ function addHandleSubmit(event) {
                 longitude: data.geonames[0].lng,
                 countryName: data.geonames[0].countryName,
                 goDate: goDate,
-                duration: duration
+                duration: diffDays
             }).then(() => {
                 getTravelList(apiURL + '/list')
                     .then((allData) => {
@@ -90,7 +91,7 @@ function generateContent(allData) {
         let template = `
         <div class="destination">
     <div class="left-side">
-        <img width="320" height="320"
+        <img class="city-image"
             src=${allData[i].imageUrl == '' ? Client.previewImage : allData[i].imageUrl}>
     </div>
     <div class="right-side">

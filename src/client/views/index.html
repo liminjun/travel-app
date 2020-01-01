@@ -3,21 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel App</title>
 </head>
 
 <body>
- 
+
   <div class="container">
     <div class="headline">
-      <h1>Travel Planner</h1>
+      <img id="logo" src="../assets/logo.png" alt="logo">
+      <h1 id="page-title">Travel Planner</h1>
     </div>
 
-    <section>
-      <h3>My Trips</h3>
-      <div>
-        <button id="btn-init">List Trip</button>
-      </div>
+    <section id="add-trip-section">
+
+
       <form id="add-trip-form">
         <div class="trip-summary row">
           <label for="city"> My trip to:</label>
@@ -34,42 +35,34 @@
         </div>
       </form>
     </section>
-    <section>
-      <div class="trip-item">
-        <div id="city-image"></div>
-        <caption id="city-image-name"></caption>
-      </div>
 
-
-      <div class="trip-item">
-
-
-        <div class="trip-info">
-          <div>
-            My trip to:
-          </div>
-          <div class="title">Trip Info</div>
-          <div id="result-container">
-            
-
-
-          </div>
-
+    <section id="list-trip-section">
+      <div class="trip-info">
+        <div>
+          Trip List:
+        </div>
+        <div>
+          <button id="btn-init">List Trip</button>
+        </div>
+        <div id="result-container">
 
         </div>
+
+
       </div>
+
     </section>
 
 
     <footer>
       <div class="box">
-        <div class="box-item">
-          <i>Design by Lee.</i>
+        <div class="box-item author">
+          <i>Develop by Lee.</i>
         </div>
-        <div class="box-item">
+        <div class="box-item other">
           &copy;2015-2019
         </div>
-        <div class="box-item">
+        <div class="box-item other">
           Udacity
         </div>
 
@@ -86,7 +79,7 @@
       });
     }
   </script>
- 
+
 
 </body>
 

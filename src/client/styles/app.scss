@@ -2,39 +2,63 @@
     width: 80%;
     margin: 0 auto;
 }
-.destination{
+
+.destination {
     display: flex;
     background-color: #ffedee;
 }
-.left-side{
+
+.left-side {
     flex: 1;
     padding: 5px;
     text-align: center;
-    img{
+
+    img {
         border-radius: 5px;
-        
+
     }
 }
-.right-side{
+
+.right-side {
     flex: 1;
-    
+
 }
-#add-trip-form{
+
+#add-trip-form {
     background-color: #e5e3e3;
     padding: 20px 0;
-    .row{
+
+    .row {
         width: 50%;
         margin: 20px auto;
     }
-    label{
+
+    label {
         text-align: left;
         width: 200px;
         display: inline-block;
     }
-    input{
+
+    input {
         height: 24px;
         line-height: 24px;
         border: 1px solid #000;
         border-radius: 1px;
     }
+}
+
+#add-trip-section {
+    border: 1px solid #38b6ff;
+    border-radius: 5px;
+}
+
+#list-trip-section {
+    margin-top: 20px;
+    border: 1px solid #7ed957;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.city-image {
+    width: 80%;
 }
